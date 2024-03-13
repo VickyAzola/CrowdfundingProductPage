@@ -7,6 +7,7 @@ import BookmarkIcon from '/images/icon-bookmark.svg'
 import BookmarkDarkCyan from '/images/bookmark-darkCyan.svg'
 import Modal from './components/Modal'
 import ThanksCard from '/src/components/ThanksCard.jsx'
+import TheCredits from "./components/TheCredits.jsx";
 
 function App() {
 
@@ -101,7 +102,9 @@ function isBookmarked() {
 
             <Card ThanksMessage={ThanksMessage} />
           </section>
-          <div className='h-10'></div>
+          <div className='h-10'>
+            <TheCredits />
+          </div>
 
           {showModal && <div className="absolute top-[-6%] z-20">
               <Modal handleClick={handleClick} ThanksMessage={ThanksMessage}  />
