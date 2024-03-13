@@ -18,6 +18,7 @@ body {
 @media screen and (min-width: 428px) {
   .bg-app {
       background-image: url('/images/image-hero-desktop.jpg');
+      height: 25rem;
       background-size: cover;
   }
 }
