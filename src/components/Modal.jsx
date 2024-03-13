@@ -17,7 +17,7 @@ const [borderCheckbox, setBorderCheckbox] = useState({
 //style card checbox
 const styleChecked = {
     base: 'border border-gray-200 my-5 p-6 rounded-lg',
-    border: 'border border-[#3cb4ac]',
+    border: 'border border-[#3cb4ac] ',
 }
 
 // function to handle the border display
