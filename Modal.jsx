@@ -25,8 +25,6 @@ function handleChange(event) {
         })
 }
 
-console.log(borderCheckbox)
-
 // listener for window width
 useEffect(() => {
     function watchWidth() {
@@ -62,7 +60,9 @@ useEffect(() => {
                 <p className='text-DarkGray my-5'>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
             </section>
 
-                <section className={`border border-gray-200 my-5 p-6 rounded-lg ${borderCheckbox.noReward ? 'border-cyan-500' : ''} `}>
+                <section 
+                    className={`border my-5 p-6 rounded-lg 
+                    ${borderCheckbox.noReward ? 'border-cyan-500' : 'border-gray-200'} `}>
                     <label className="container block relative hover:cursor-pointer">
                         <input 
                             className="checkbox"
@@ -93,7 +93,9 @@ useEffect(() => {
                 </section>
                 
 
-            <section className={`border border-gray-200 my-5 p-6 rounded-lg ${borderCheckbox.BambooStand ? 'border-cyan-500' : ''} `}>
+            <section 
+                className={`border my-5 p-6 rounded-lg 
+                ${borderCheckbox.BambooStand ? 'border-cyan-500' : 'border-gray-200'} `}>
                 <label className="container block relative ">
                     <input 
                         className="checkbox"
@@ -146,7 +148,9 @@ useEffect(() => {
                 </div>}
             </section>
 
-            <section className={`border border-gray-200 my-5 p-6 rounded-lg ${borderCheckbox.BlackStand ? 'border-cyan-500' : ''} `}>
+            <section 
+                className={`border my-5 p-6 rounded-lg 
+                ${borderCheckbox.BlackStand ? 'border-cyan-500' : 'border-gray-200'} `}>
                 <label className="container block relative hover:cursor-pointer">
                     <input 
                         className="checkbox"
