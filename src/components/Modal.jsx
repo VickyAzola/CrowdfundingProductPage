@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Button from '/src/components/Button.jsx'
 
 function Modal(props) {
+
 // State to listen to window width
 const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
@@ -12,13 +13,6 @@ const [borderCheckbox, setBorderCheckbox] = useState({
     BambooStand: false,
     BlackStand: false,
 })
-
-
-//style card checbox
-const styleChecked = {
-    base: 'border border-gray-200 my-5 p-6 rounded-lg',
-    border: 'border border-cyan-400 ',
-}
 
 // function to handle the border display
 function handleChange(event) {
@@ -66,7 +60,9 @@ useEffect(() => {
                 <p className='text-DarkGray my-5'>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
             </section>
 
-                <section className={`${styleChecked.base} ${borderCheckbox.noReward == true ? styleChecked.border : ''} `}>
+                <section 
+                    className={`my-5 p-6 rounded-lg 
+                    ${borderCheckbox.noReward ? 'border border-cyan-500' : 'border border-gray-200'} `}>
                     <label className="container block relative hover:cursor-pointer">
                         <input 
                             className="checkbox"
@@ -97,7 +93,9 @@ useEffect(() => {
                 </section>
                 
 
-            <section className={`${styleChecked.base} ${borderCheckbox.BambooStand == true ? styleChecked.border : ''} `}>
+            <section 
+                className={`border my-5 p-6 rounded-lg 
+                ${borderCheckbox.BambooStand ? 'border border-cyan-500' : 'border border-gray-200'} `}>
                 <label className="container block relative ">
                     <input 
                         className="checkbox"
@@ -150,7 +148,9 @@ useEffect(() => {
                 </div>}
             </section>
 
-            <section className={`${styleChecked.base} ${borderCheckbox.BlackStand == true ? styleChecked.border : ''} `}>
+            <section 
+                className={`border my-5 p-6 rounded-lg 
+                ${borderCheckbox.BlackStand ? 'border border-cyan-500' : 'border border-gray-200'} `}>
                 <label className="container block relative hover:cursor-pointer">
                     <input 
                         className="checkbox"
