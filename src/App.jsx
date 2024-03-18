@@ -49,7 +49,7 @@ function isBookmarked() {
         
         <div className='mb-8 bg-[#f9fafb] rounded-lg top-[-3.8rem] mx-auto inset-x-0 absolute'>
           
-          <img src={LogoMaster} className='absolute top-[-2rem] mx-auto inset-x-0' />
+          <img src={LogoMaster} className='absolute top-[-2rem] mx-auto inset-x-0' alt="" />
           
           <section className='bg-white pt-10 pb-6 px-6 lg:pt-12 lg:pb-10 lg:px-12 border-b border-x border-gray-100 text-center rounded-lg mb-5'>
             <h1 className='text-2xl lg:text-3xl font-bold mb-3'>Mastercraft Bamboo Monitor Riser</h1>
