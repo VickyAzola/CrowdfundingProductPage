@@ -60,10 +60,10 @@ function isBookmarked() {
                 textButton="Back this project" 
                 baseStyle="base" 
                 variant="widest" />
-              <button onClick={isBookmarked} aria-label='Bookmark' className="md:bg-gray-100 md:flex md:items-center md:justify-between md:w-40 md:rounded-full">
+              <div role="button" tabindex="0" onClick={isBookmarked} aria-label='Bookmark' className="md:bg-gray-100 md:flex md:items-center md:justify-between md:w-40 md:rounded-full">
                 <p className={`${bookmark ? 'text-DarkCyan' : 'text-DarkGray'} hidden md:block md:order-1 pr-4 font-bold`}>Bookmark</p>
                 {bookmark ? <img src={BookmarkDarkCyan} alt=""/> : <img src={BookmarkIcon} alt=""/>}
-              </button>
+              </div>
             </div>
           </section>
 
