@@ -24,10 +24,9 @@ body {
 }
 
 /* Customize the label (the container) */
-.container {
+.container-checkbox  {
     display: block;
     position: relative;
-    cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -35,15 +34,14 @@ body {
 }
 
   /* Hide the browser's default checkbox */
-.container .checkbox {
+.container-checkbox  .checkbox {
     position: absolute;
     opacity: 0;
-    cursor: pointer;
     height: 0;
     width: 0;
 }
 
-  /* Create a custom checkbox */
+  /* Custom checkbox */
 .checkmark {
     position: absolute;
     border-radius: 50%;
@@ -54,31 +52,31 @@ body {
     width: 25px;
 }
 
-  /* On mouse-over, add a grey background color */
-.container:hover .checkbox ~ .checkmark {
-  border: 1px solid hsl(176, 50%, 47%);
+/* On mouse-over, add a cyan border*/
+.container-checkbox:not(.disabled-cbx):hover .checkbox ~ .checkmark {
+    border: 1px solid hsl(176, 50%, 47%);
+    cursor: pointer;
 }
-
-  /* When the checkbox is checked, add a blue background */
-.container .checkbox:checked ~ .checkmark {
+  
+  /* When the checkbox is checked, add a white background */
+.container-checkbox .checkbox:checked ~ .checkmark {
     background-color: white;
 }
 
-  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Create the checkmark (hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
-    
 }
 
   /* Show the checkmark when checked */
-.container .checkbox:checked ~ .checkmark:after {
+.container-checkbox .checkbox:checked ~ .checkmark:after {
     display: block;
 }
 
-  /* Style the checkmark/indicator */
-.container .checkmark:after {
+  /* Style the checkmark (cyan dot) */
+.container-checkbox .checkmark:after {
     border: 1px solid lightgrey;
     border-radius: 50%;
     left: .25rem;
@@ -86,4 +84,60 @@ body {
     width: .9rem;
     height: .9rem;
     background-color: #3cb4ac;
+}
+
+/* custom-underline navbar desktop */
+.custom-underline {
+  position: relative;
+}
+
+.custom-underline::before {
+  content: "";
+  position: absolute;
+  padding-top: 2px;
+  bottom: -5px; 
+  left: 0; 
+  width: 0; 
+  height: 2px; 
+  background-color: white; 
+  transition: width 0.4s ease; 
+}
+
+.custom-underline:hover::before {
+  width: 100%; 
+  left: 0; 
+}
+
+
+/*Animations*/
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes highlight {
+  0% {
+    border: 1px solid rgba(0, 255, 255, 0.226);
+  }
+  50% {
+    border: 1px solid rgba(0, 255, 255, 0.589);
+  }
+  100% {
+      border: 1px solid rgb(0, 255, 255);
+  }
+}
+
+.highlight {
+  animation: highlight 0.2s ease-out;
 }

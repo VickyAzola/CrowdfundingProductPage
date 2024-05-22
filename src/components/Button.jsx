@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 function Button(props) {
 
     const classBase = {
-        base: 'bg-ModerateCyan text-white rounded-full text-sm font-semibold hover:bg-DarkCyan',
+        base: 'bg-ModerateCyan text-white rounded-full text-sm font-semibold hover:bg-DarkCyan transition-all',
         disabled: 'bg-gray-300 text-white rounded-full text-sm font-semibold'
     }
 

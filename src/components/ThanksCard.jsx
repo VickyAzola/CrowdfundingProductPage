@@ -6,7 +6,7 @@ function ThanksCard(props) {
 
     return (
         <>
-        <article className='bg-white p-8 rounded-lg text-center'>
+        <article className='bg-white p-8 rounded-lg text-center fade-in-up'>
             <img className='mx-auto h-16 w-16 inset-x-0' src={CheckIcon} alt="" />
             <h4 className='font-black text-lg mt-5'>Thanks for your support! </h4>
             <p className='text-DarkGray my-5'>
