@@ -58,7 +58,7 @@ function Card(props) {
                 className="border border-gray-100 my-5 p-6 rounded-lg">
                 <div className='md:flex md:justify-between'>
                     <h4 className='font-black text-gray-400'>{disabledCard.name} </h4>
-                    <p className='text-cyan-100 font-semibold'>{disabledCard.pledge} </p>
+                    <p className='text-[#b3e6e2] font-semibold'>{disabledCard.pledge} </p>
                 </div>
                 <p className='text-gray-300 my-5'>{disabledCard.description} </p>
                 <div className='md:flex md:justify-between md:items-center'>

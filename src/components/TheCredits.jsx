@@ -3,7 +3,7 @@ function TheCredits() {
 
     return (
     <>
-        <p className="text-xs flex gap-x-1 justify-center my-3 text-gray-400">
+        <p className="text-xs flex flex-wrap gap-x-1 justify-center my-3 text-gray-400">
         Challenge by 
             <a
                 className="font-bold hover:text-DarkCyan" 

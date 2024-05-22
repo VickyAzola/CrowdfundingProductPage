@@ -8,7 +8,7 @@ function Button(props) {
     }
 
     const buttonWidth = {
-        widest:  'py-4 px-14',
+        widest:  'py-4 px-12',
         narrow: 'py-3 px-7'
     }
 

@@ -44,12 +44,15 @@ function isBookmarked() {
       <header className='bg-app'>
         <Navbar />
       </header>
-      {showModal || showThanks ? <div className="fixed top-0 z-10 min-h-screen bg-black/20 min-w-[100%]"></div> : ''}
-      <main className='relative mx-6 md:mx-28 lg:mx-48 xl:mx-80'>
-        
-        <div className='mb-8 bg-[#f9fafb] rounded-lg top-[-3.8rem] mx-auto inset-x-0 absolute'>
+      {showModal || showThanks 
+        ? <div className="fixed top-0 z-10 min-h-screen bg-black/20 min-w-[100%]"></div> 
+        : ''
+      }
+      
+      <main className='relative mx-6 md:max-w-[40rem] lg:max-w-[50rem] md:mx-auto'>
+        <div className='mb-8 bg-[#f9fafb] mx-auto inset-x-0 absolute rounded-lg top-[-3.8rem]'>
           
-          <img src={LogoMaster} className='absolute top-[-2rem] mx-auto inset-x-0' alt="" />
+          <img src={LogoMaster} className='absolute top-[-2rem] mx-auto inset-x-0' />
           
           <section className='bg-white pt-10 pb-6 px-6 lg:pt-12 lg:pb-10 lg:px-12 border-b border-x border-gray-100 text-center rounded-lg mb-5'>
             <h1 className='text-2xl lg:text-3xl font-bold mb-3'>Mastercraft Bamboo Monitor Riser</h1>
@@ -60,10 +63,10 @@ function isBookmarked() {
                 textButton="Back this project" 
                 baseStyle="base" 
                 variant="widest" />
-              <div role="button" tabindex="0" onClick={isBookmarked} aria-label='Bookmark' className="md:bg-gray-100 md:flex md:items-center md:justify-between md:w-40 md:rounded-full">
+              <button onClick={isBookmarked} aria-label='Bookmark' className="md:bg-gray-100 md:flex md:items-center md:justify-between md:w-40 md:rounded-full">
                 <p className={`${bookmark ? 'text-DarkCyan' : 'text-DarkGray'} hidden md:block md:order-1 pr-4 font-bold`}>Bookmark</p>
                 {bookmark ? <img src={BookmarkDarkCyan} alt=""/> : <img src={BookmarkIcon} alt=""/>}
-              </div>
+              </button>
             </div>
           </section>
 

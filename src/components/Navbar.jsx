@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from '/images/logo.svg'
 import Hamburger from '/images/icon-hamburger.svg'
 import Close from '/images/icon-close-menu.svg'
@@ -8,7 +8,8 @@ function Navbar() {
 
     // State to manage the navbar's visibility
     const [nav, setNav] = useState(false);
-
+    //State to manage scroll's visibility
+    const [scrolled, setScrolled] = useState(false);
 
   // Toggle function to handle the navbar's display
     const showNavbar = () => {
@@ -22,13 +23,32 @@ function Navbar() {
         {id: 2, text: 'Get Started'},
     ];
 
+    // Function to handle scroll event
+    const handleScroll = () => {
+        if (window.scrollY > 100) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
+    };
+    
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
         <>
-        <nav className='flex fixed z-30 w-full font-semibold text-xl md:px-12 md:py-6 bg-black/20'>
+        <nav id="topNav" aria-label="Top Navigation"
+            className={`fixed z-30 w-full font-semibold text-xl text-DarkBlue md:text-sm md:px-12 lg:px-32 md:pt-4 lg:pt-6
+                ${scrolled ? 'bg-black/30' : 'bg-transparent'} transition-colors duration-500 `}>
 
             {/* Logo, Hamburger and Close mobile */}
             <div className='flex justify-between items-center w-full h-20 md:h-min'>
-                <a href=''className="absolute z-20 top-8 left-6 md:relative md:inset-0" aria-label='Logo'><img src={Logo} alt="Logo"/></a>
+                <a href=''className="absolute z-20 top-8 md:top-5 left-6 md:relative md:inset-0" aria-label='Logo'><img src={Logo} alt="Logo"/></a>
                 <button 
                     onClick={showNavbar} 
                     className='absolute z-20 right-6 top-8 ease-in duration-700 md:relative block md:hidden' 
@@ -40,7 +60,7 @@ function Navbar() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className='hidden md:flex items-center w-full justify-end'>
+            <div className='hidden md:flex items-center w-full justify-end md:pb-6'>
                 <ul className=' text-white flex gap-x-10'>
                     {navItems.map((item) => (
                     <li key={item.id}>
@@ -53,13 +73,12 @@ function Navbar() {
             </div>
 
             {/* Mobile Navigation Menu */}
-            {nav ? <div className="block md:hidden min-h-screen bg-black/20 min-w-[100%]"></div> : ""}
-            <ul
-                className={
-                nav
-                    ? 'w-[90%] rounded-xl mx-auto inset-x-0 top-[11%] z-10 fixed md:hidden min-h-min bg-white ease-in-out duration-700'
-                    : 'ease-in-out z-10 duration-700 fixed hidden'
-                }
+            {nav 
+                ? <div onClick={showNavbar} className="block md:hidden min-h-screen bg-black/20 min-w-[100%]"></div> 
+                : ""
+            }
+            <ul className={`fixed inset-x-0 top-[5rem] mx-auto w-[90%] bg-white rounded z-20 md:hidden transition-transform duration-700 ease-in-out 
+                    ${nav ? 'transform translate-y-0' : 'transform -translate-y-[140%]'}`}
             >
                 {navItems.map(item => (
                 <li key={item.id} className='w-full' style={item.style}>
